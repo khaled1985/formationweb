@@ -11,7 +11,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <style>
+        table,
+        tr {
+            margin: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +61,12 @@
         </div>
     </nav>
 
-    <div id="content"></div>
+    <center>
+        <div id="content" style="margin-top: 20px;">
+
+        </div>
+
+    </center>
 </body>
 
 </html>
@@ -72,6 +82,33 @@
             cache: 'false',
             dataType: 'text',
             url: "AddEtudiant.php",
+            success: function(data) {
+                $("#content").html(data);
+            }
+        });
+
+
+    }
+
+
+    function Addetudi() {
+        nom = $("#nom").val();
+        prenom = $("#prenom").val();
+        age = $("#age").val();
+        cin = $("#cin").val();
+
+        $.ajax({
+            type: 'POST',
+            data: {
+                nom,
+                prenom,
+                age,
+                cin
+            },
+            async: 'false',
+            cache: 'false',
+            dataType: 'text',
+            url: "Add_bd_etudiant.php",
             success: function(data) {
                 alert(data);
             }
