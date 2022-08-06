@@ -38,6 +38,11 @@
                 </li>
 
 
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="listeEtudiant()">Listes Etudiants </a>
+                </li>
+
+
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -97,6 +102,8 @@
         age = $("#age").val();
         cin = $("#cin").val();
 
+
+
         $.ajax({
             type: 'POST',
             data: {
@@ -110,7 +117,29 @@
             dataType: 'text',
             url: "Add_bd_etudiant.php",
             success: function(data) {
-                alert(data);
+                //alert(data);
+                $("#messageErreur").html(data);
+            }
+        });
+
+
+
+
+    }
+
+
+
+    function listeEtudiant() {
+
+        $.ajax({
+            type: 'POST',
+            data: {},
+            async: 'false',
+            cache: 'false',
+            dataType: 'text',
+            url: "ListeEtud.php",
+            success: function(data) {
+                $("#content").html(data);
             }
         });
 

@@ -9,7 +9,7 @@ $dbname = "ims2";
 $connect = mysqli_connect($servername, $username, $password, $dbname);
 // checking the connection
 if($connect ) {
-   echo "Successfully connected";
+   //echo "Successfully connected";
 }
 else {
     die("Connection Failed : " );
