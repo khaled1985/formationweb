@@ -3,7 +3,7 @@ require_once 'db_connect.php';
 
 $query = "SELECT  * FROM etudiants ";
 //premier test
- //squa
+ //squagghf
 $content="";
 if ($result = mysqli_query($connect, $query)) { 
 
