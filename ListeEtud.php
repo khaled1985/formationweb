@@ -4,7 +4,6 @@ require_once 'db_connect.php';
 $query = "SELECT  * FROM etudiants ";
 //premier test github
  //test branche
- //second test
 $content="";
 if ($result = mysqli_query($connect, $query)) { 
 
