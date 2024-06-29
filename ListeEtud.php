@@ -4,6 +4,7 @@ require_once 'db_connect.php';
 $query = "SELECT  * FROM etudiants ";
 //premier test
  //squagghf
+ //code
 $content="";
 if ($result = mysqli_query($connect, $query)) { 
 
